@@ -8,7 +8,7 @@
 Name:           libxslt
 Summary:        Library providing the Gnome XSLT engine
 Version:        1.1.32
-Release:        6%{?dist}
+Release:        6.1%{?dist}
 
 License:        MIT
 URL:            http://xmlsoft.org/XSLT
@@ -33,6 +33,10 @@ Patch3:         libxslt-1.1.32-CVE-2019-18197.patch
 Patch4:         libxslt-1.1.32-CVE-2019-11068.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1860467
 Patch5:         libxslt-1.1.32-unexpected-rvt-flag.patch
+# https://issues.redhat.com/browse/RHEL-83506
+Patch6:         libxslt-1.1.32-CVE-2024-55549.patch
+# https://issues.redhat.com/browse/RHEL-83492
+Patch7:         libxslt-1.1.32-CVE-2025-24855.patch
 
 %description
 This C library allows to transform XML files into other XML files
@@ -137,6 +141,10 @@ rm -vrf %{buildroot}%{_docdir}
 %endif # with python2
 
 %changelog
+* Fri Apr 04 2025 David King <dking@redhat.com> - 1.1.32-6.1
+- Fix CVE-2024-55549 (RHEL-83506)
+- Fix CVE-2025-24855 (RHEL-83492)
+
 * Mon Aug 24 2020 David King <dking@redhat.com> - 1.1.32-6
 - Fix unexpected RVT flag error (#1860467)
 
