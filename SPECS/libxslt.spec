@@ -1,7 +1,7 @@
 Name:           libxslt
 Summary:        Library providing the Gnome XSLT engine
 Version:        1.1.34
-Release:        9%{?dist}.2
+Release:        9%{?dist}.3
 
 License:        MIT
 URL:            http://xmlsoft.org/XSLT
@@ -134,6 +134,9 @@ rm -vrf %{buildroot}%{_docdir}
 %endif
 
 %changelog
+* Fri Apr 25 2025 David King <dking@redhat.com> - 1.1.34-9.3
+- Include alloc changes into previous patch (RHEL-83515)
+
 * Thu Apr 17 2025 David King <dking@redhat.com> - 1.1.34-9.2
 - Fix CVE-2024-55549 (RHEL-83515)
 
