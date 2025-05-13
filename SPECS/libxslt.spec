@@ -1,7 +1,7 @@
 Name:           libxslt
 Summary:        Library providing the Gnome XSLT engine
 Version:        1.1.34
-Release:        10%{?dist}
+Release:        13%{?dist}
 
 License:        MIT
 URL:            http://xmlsoft.org/XSLT
@@ -26,6 +26,8 @@ Patch4:         libxslt-1.1.34-tutorial2-dtd.patch
 Patch5:         libxslt-1.1.34-test-fuzz-build.patch
 # https://issues.redhat.com/browse/RHEL-83500
 Patch6:         libxslt-1.1.34-CVE-2025-24855.patch
+# https://issues.redhat.com/browse/RHEL-83514
+Patch7:         libxslt-1.1.34-CVE-2024-55549.patch
 
 %description
 This C library allows to transform XML files into other XML files
@@ -132,6 +134,17 @@ rm -vrf %{buildroot}%{_docdir}
 %endif
 
 %changelog
+* Fri Apr 04 2025 Tomas Pelka <tpelka@redhat.com> - 1.1.34-13
+- Rebuild for z-stream/0day 
+- Resolves: RHEL-83514 
+- Resolves: RHEL-85988 
+
+* Thu Apr 03 2025 David King <dking@redhat.com> - 1.1.34-12
+- Include alloc changes into previous patch (RHEL-83514)
+
+* Wed Apr 02 2025 David King <dking@redhat.com> - 1.1.34-11
+- Fix CVE-2024-55549 (RHEL-83514)
+
 * Thu Mar 20 2025 David King <dking@redhat.com> - 1.1.34-10
 - Fix CVE-2025-24855 (RHEL-83500)
 
