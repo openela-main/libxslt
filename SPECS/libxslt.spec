@@ -8,7 +8,7 @@
 Name:           libxslt
 Summary:        Library providing the Gnome XSLT engine
 Version:        1.1.32
-Release:        6.2%{?dist}
+Release:        6.3%{?dist}
 
 License:        MIT
 URL:            http://xmlsoft.org/XSLT
@@ -143,6 +143,9 @@ rm -vrf %{buildroot}%{_docdir}
 %endif # with python2
 
 %changelog
+* Thu Aug 07 2025 David King <dking@redhat.com> - 1.1.32-6.3
+- Fix misplaced endif (RHEL-107912)
+
 * Tue Jun 03 2025 David King <dking@redhat.com> - 1.1.32-6.2
 - Fix CVE-2023-40403 (aka 2022-4909) (RHEL-89374)
 
