@@ -30,6 +30,8 @@ Patch6:         libxslt-1.1.34-CVE-2025-24855.patch
 Patch7:         libxslt-1.1.34-CVE-2024-55549.patch
 # https://issues.redhat.com/browse/RHEL-82213
 Patch8:         libxslt-1.1.34-CVE-2023-40403.patch
+# https://redhat.atlassian.net/browse/RHEL-171991
+Patch9:         libxslt-1.1.34-CVE-2025-10911.patch
 
 %description
 This C library allows to transform XML files into other XML files
@@ -136,6 +138,9 @@ rm -vrf %{buildroot}%{_docdir}
 %endif
 
 %changelog
+* Tue May 19 2026 David King <dking@redhat.com> - 1.1.34-14.1
+- Fix CVE-2025-10911 (RHEL-171991)
+
 * Mon Mar 30 2026 David King <dking@redhat.com> - 1.1.34-14.1
 - Fix upgrade path for CVE-2023-40403 (RHEL-82213)
 
